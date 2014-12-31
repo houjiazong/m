@@ -1,0 +1,38 @@
+{
+	"name": "mBasic",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"dependencies": {
+		"gulp": "*",
+		"gulp-minify-css": "*",
+		"gulp-csslint": "*",
+		"gulp-jshint": "*",
+		"gulp-uglify": "*",
+		"gulp-rename": "*",
+		"gulp-concat": "*",
+		"gulp-clean": "*",
+		"gulp-useref": "*",
+		"gulp-imagemin": "*",
+		"imagemin-pngquant": "*",
+		"gulp-livereload": "*"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/houjiazong/mBasic.git"
+	},
+	"keywords": [
+		"gulp",
+		"gulp-basic",
+		"mBasic",
+		"front-end"
+	],
+	"author": "houjiazong",
+	"bugs": {
+		"url": "https://github.com/houjiazong/mBasic/issues"
+	},
+	"homepage": "https://github.com/houjiazong/mBasic"
+}
