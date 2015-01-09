@@ -2,37 +2,30 @@
 	"name": "mBasic",
 	"version": "1.0.0",
 	"description": "",
-	"main": "index.js",
+	"main": "gulpfile.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"dependencies": {
-		"gulp": "*",
-		"gulp-minify-css": "*",
-		"gulp-csslint": "*",
-		"gulp-jshint": "*",
-		"gulp-uglify": "*",
-		"gulp-rename": "*",
-		"gulp-concat": "*",
-		"gulp-clean": "*",
-		"gulp-useref": "*",
-		"gulp-imagemin": "*",
-		"imagemin-pngquant": "*",
-		"gulp-livereload": "*"
+
 	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/houjiazong/mBasic.git"
 	},
-	"keywords": [
-		"gulp",
-		"gulp-basic",
-		"mBasic",
-		"front-end"
-	],
 	"author": "houjiazong",
-	"bugs": {
-		"url": "https://github.com/houjiazong/mBasic/issues"
-	},
-	"homepage": "https://github.com/houjiazong/mBasic"
+	"devDependencies": {
+		"browser-sync": "^1.8.3",
+		"gulp": "^3.8.10",
+		"gulp-clean": "^0.3.1",
+		"gulp-concat": "^2.4.3",
+		"gulp-csslint": "^0.1.5",
+		"gulp-imagemin": "^2.1.0",
+		"gulp-jshint": "^1.9.0",
+		"gulp-minify-css": "^0.3.11",
+		"gulp-rename": "^1.2.0",
+		"gulp-uglify": "^1.0.2",
+		"gulp-util": "^3.0.2",
+		"imagemin-pngquant": "^4.0.0"
+	}
 }
