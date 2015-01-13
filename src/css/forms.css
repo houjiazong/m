@@ -1,0 +1,339 @@
+.m-form input[type="text"],
+.m-form input[type="password"],
+.m-form input[type="email"],
+.m-form input[type="url"],
+.m-form input[type="date"],
+.m-form input[type="month"],
+.m-form input[type="time"],
+.m-form input[type="datetime"],
+.m-form input[type="datetime-local"],
+.m-form input[type="week"],
+.m-form input[type="number"],
+.m-form input[type="search"],
+.m-form input[type="tel"],
+.m-form input[type="color"],
+.m-form select,
+.m-form textarea {
+    padding: 0.5em 0.6em;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 1px 3px #ddd;
+    border-radius: 4px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* not type */
+.m-form input:not([type]) {
+    padding: 0.5em 0.6em;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 1px 3px #ddd;
+    border-radius: 4px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.m-form input[type="color"] {
+    padding: 0.2em 0.5em;
+}
+
+.m-form input[type="text"]:focus,
+.m-form input[type="password"]:focus,
+.m-form input[type="email"]:focus,
+.m-form input[type="url"]:focus,
+.m-form input[type="date"]:focus,
+.m-form input[type="month"]:focus,
+.m-form input[type="time"]:focus,
+.m-form input[type="datetime"]:focus,
+.m-form input[type="datetime-local"]:focus,
+.m-form input[type="week"]:focus,
+.m-form input[type="number"]:focus,
+.m-form input[type="search"]:focus,
+.m-form input[type="tel"]:focus,
+.m-form input[type="color"]:focus,
+.m-form select:focus,
+.m-form textarea:focus {
+    outline: 0;
+    outline: thin dotted \9; /* IE6-9 */
+    border-color: #129fea;
+}
+
+.m-form input:not([type]):focus {
+    outline: 0;
+    outline: thin dotted \9; /* IE6-9 */
+    border-color: #129fea;
+}
+
+.m-form input[type="file"]:focus,
+.m-form input[type="radio"]:focus,
+.m-form input[type="checkbox"]:focus {
+    outline: thin dotted #333;
+    outline: 1px auto #129fea;
+}
+
+.m-form .m-checkbox,
+.m-form .m-radio {
+    margin: 0.5em 0;
+    display: block;
+}
+
+.m-form input[type="text"][disabled],
+.m-form input[type="password"][disabled],
+.m-form input[type="email"][disabled],
+.m-form input[type="url"][disabled],
+.m-form input[type="date"][disabled],
+.m-form input[type="month"][disabled],
+.m-form input[type="time"][disabled],
+.m-form input[type="datetime"][disabled],
+.m-form input[type="datetime-local"][disabled],
+.m-form input[type="week"][disabled],
+.m-form input[type="number"][disabled],
+.m-form input[type="search"][disabled],
+.m-form input[type="tel"][disabled],
+.m-form input[type="color"][disabled],
+.m-form select[disabled],
+.m-form textarea[disabled] {
+    cursor: not-allowed;
+    background-color: #eaeded;
+    color: #cad2d3;
+}
+
+.m-form input:not([type])[disabled] {
+    cursor: not-allowed;
+    background-color: #eaeded;
+    color: #cad2d3;
+}
+
+.m-form input[readonly],
+.m-form select[readonly],
+.m-form textarea[readonly] {
+    background: #eee;
+    color: #777;
+    border-color: #ccc;
+}
+
+.m-form input:focus:invalid,
+.m-form textarea:focus:invalid,
+.m-form select:focus:invalid {
+    color: #b94a48;
+    border-color: #ee5f5b;
+}
+.m-form input:focus:invalid:focus,
+.m-form textarea:focus:invalid:focus,
+.m-form select:focus:invalid:focus {
+    border-color: #e9322d;
+}
+.m-form input[type="file"]:focus:invalid:focus,
+.m-form input[type="radio"]:focus:invalid:focus,
+.m-form input[type="checkbox"]:focus:invalid:focus {
+    outline-color: #e9322d;
+}
+.m-form select {
+    border: 1px solid #ccc;
+    background-color: white;
+}
+.m-form select[multiple] {
+    height: auto;
+}
+.m-form label {
+    margin: 0.5em 0 0.2em;
+}
+.m-form fieldset {
+    margin: 0;
+    padding: 0.35em 0 0.75em;
+    border: 0;
+}
+.m-form legend {
+    display: block;
+    width: 100%;
+    padding: 0.3em 0;
+    margin-bottom: 0.3em;
+    color: #333;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.m-form-stacked input[type="text"],
+.m-form-stacked input[type="password"],
+.m-form-stacked input[type="email"],
+.m-form-stacked input[type="url"],
+.m-form-stacked input[type="date"],
+.m-form-stacked input[type="month"],
+.m-form-stacked input[type="time"],
+.m-form-stacked input[type="datetime"],
+.m-form-stacked input[type="datetime-local"],
+.m-form-stacked input[type="week"],
+.m-form-stacked input[type="number"],
+.m-form-stacked input[type="search"],
+.m-form-stacked input[type="tel"],
+.m-form-stacked input[type="color"],
+.m-form-stacked select,
+.m-form-stacked label,
+.m-form-stacked textarea {
+    display: block;
+    margin: 0.25em 0;
+}
+
+.m-form-stacked input:not([type]) {
+    display: block;
+    margin: 0.25em 0;
+}
+
+.m-form-aligned input,
+.m-form-aligned textarea,
+.m-form-aligned select,
+.m-form-aligned .m-help-inline,
+.m-form-message-inline {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+}
+
+.m-form-aligned textarea {
+    vertical-align: top;
+}
+
+.m-form-aligned .m-control-group {
+    margin-bottom: 0.5em;
+}
+
+.m-form-aligned .m-control-group label {
+    text-align: right;
+    display: inline-block;
+    vertical-align: middle;
+    width: 10em;
+    margin: 0 1em 0 0;
+}
+
+.m-form-aligned .m-controls {
+    margin: 1.5em 0 0 10em;
+}
+
+.m-form input.m-input-rounded,
+.m-form .m-input-rounded {
+    border-radius: 2em;
+    padding: 0.5em 1em;
+}
+
+.m-form .m-group fieldset {
+    margin-bottom: 10px;
+}
+.m-form .m-group input {
+    display: block;
+    padding: 10px;
+    margin: 0;
+    border-radius: 0;
+    position: relative;
+    top: -1px;
+}
+.m-form .m-group input:focus {
+    z-index: 2;
+}
+.m-form .m-group input:first-child {
+    top: 1px;
+    border-radius: 4px 4px 0 0;
+}
+.m-form .m-group input:last-child {
+    top: -2px;
+    border-radius: 0 0 4px 4px;
+}
+.m-form .m-group button {
+    margin: 0.35em 0;
+}
+
+.m-form .m-input-1 {
+    width: 100%;
+}
+.m-form .m-input-2-3 {
+    width: 66%;
+}
+.m-form .m-input-1-2 {
+    width: 50%;
+}
+.m-form .m-input-1-3 {
+    width: 33%;
+}
+.m-form .m-input-1-4 {
+    width: 25%;
+}
+
+.m-form .m-help-inline,
+.m-form-message-inline {
+    display: inline-block;
+    padding-left: 0.3em;
+    color: #666;
+    vertical-align: middle;
+    font-size: 0.875em;
+}
+
+.m-form-message {
+    display: block;
+    color: #666;
+    font-size: 0.875em;
+}
+
+@media only screen and (max-width : 480px) {
+    .m-form button[type="submit"] {
+        margin: 0.7em 0 0;
+    }
+
+    .m-form input:not([type]),
+    .m-form input[type="text"],
+    .m-form input[type="password"],
+    .m-form input[type="email"],
+    .m-form input[type="url"],
+    .m-form input[type="date"],
+    .m-form input[type="month"],
+    .m-form input[type="time"],
+    .m-form input[type="datetime"],
+    .m-form input[type="datetime-local"],
+    .m-form input[type="week"],
+    .m-form input[type="number"],
+    .m-form input[type="search"],
+    .m-form input[type="tel"],
+    .m-form input[type="color"],
+    .m-form label {
+        margin-bottom: 0.3em;
+        display: block;
+    }
+
+    .m-group input:not([type]),
+    .m-group input[type="text"],
+    .m-group input[type="password"],
+    .m-group input[type="email"],
+    .m-group input[type="url"],
+    .m-group input[type="date"],
+    .m-group input[type="month"],
+    .m-group input[type="time"],
+    .m-group input[type="datetime"],
+    .m-group input[type="datetime-local"],
+    .m-group input[type="week"],
+    .m-group input[type="number"],
+    .m-group input[type="search"],
+    .m-group input[type="tel"],
+    .m-group input[type="color"] {
+        margin-bottom: 0;
+    }
+
+    .m-form-aligned .m-control-group label {
+        margin-bottom: 0.3em;
+        text-align: left;
+        display: block;
+        width: 100%;
+    }
+
+    .m-form-aligned .m-controls {
+        margin: 1.5em 0 0 0;
+    }
+
+    .m-form .m-help-inline,
+    .m-form-message-inline,
+    .m-form-message {
+        display: block;
+        font-size: 0.75em;
+        padding: 0.2em 0 0.8em;
+    }
+}

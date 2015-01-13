@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="UTF-8">
+<title>random</title>
+<link rel="stylesheet" type="text/css" href="../../dist/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="../../dist/css/m.min.css">
+<style type="text/css">
+.m-wrap {
+	margin: 50px;
+}
+</style>
+</head>
+<body>
+<div class="m-wrap">
+	<strong>可以只写一个最大数</strong>
+	最小数：<input type="text" value="5" id="min">
+	最大数：<input type="text" value="10" id="max">
+	<button class="m-button m-button-primary" id="put">打印</button>
+</div>
+<script type="text/javascript" src="../../dist/js/jquery.min.js"></script>
+<script type="text/javascript" src="../../dist/js/m.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$('#put').on('click', function() {
+		var min = $('#min').val();
+		var max = $('#max').val();
+		if (!min) {
+			min = 0;
+		}
+		var res = m.random(parseInt(min), parseInt(max));
+		var str = '<p>随机数为：' + res + '</p>';
+		$(str).appendTo('.m-wrap');
+	});
+});
+</script>
+</body>
+</html>

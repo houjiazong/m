@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="UTF-8">
+<title>countDown</title>
+<link rel="stylesheet" type="text/css" href="../../dist/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="../../dist/css/m.min.css">
+<style type="text/css">
+.m-wrap {
+	margin: 50px;
+}
+</style>
+</head>
+<body>
+<div class="m-wrap">
+	<span class="day"></span>日
+	<span class="hour"></span>小时
+	<span class="minute"></span>分
+	<span class="second"></span>秒
+	<span class="done"></span>
+</div>
+<script type="text/javascript" src="../../dist/js/jquery.min.js"></script>
+<script type="text/javascript" src="../../dist/js/m.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	m.countDown('2020/11/27 18:25:00', function(day, hour, minute, second) {
+		$('.day').html(day);
+		$('.hour').html(hour);
+		$('.minute').html(minute);
+		$('.second').html(second);
+	}, function(day, hour, minute, second) {
+		$('.done').html(day + '-' + hour + '-' + minute + '-' + second);
+	});
+});
+</script>
+</body>
+</html>

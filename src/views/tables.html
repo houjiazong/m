@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="UTF-8" />
+<title>Tables Test</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="stylesheet" type="text/css" href="../../dist/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="../../dist/css/m.min.css">
+<style type="text/css">
+.title {
+	text-align: left;
+	padding: 0.5em 0;
+	color: #00c7ff;
+    font-size: 1.8em;
+}
+
+.content {
+    margin: 0 2em;
+    padding-bottom: 2em;
+}
+</style>
+</head>
+<body>
+<div class="content">
+    <h2 class="title">默认表格</h2>
+    <table class="m-table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>项目名称</th>
+                <th>重酬金额</th>
+                <th>结束日期</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>DOTA2电竞联赛</td>
+                <td>215330</td>
+                <td>2014-10-12</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>Grow</td>
+                <td>8404</td>
+                <td>2014-11-21</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>诛神记</td>
+                <td>14760</td>
+                <td>2014-9-8</td>
+            </tr>
+        </tbody>
+    </table>
+    <h2 class="title">横向分割线的表格</h2>
+    <table class="m-table m-table-horizontal">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>项目名称</th>
+                <th>重酬金额</th>
+                <th>结束日期</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>DOTA2电竞联赛</td>
+                <td>215330</td>
+                <td>2014-10-12</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>Grow</td>
+                <td>8404</td>
+                <td>2014-11-21</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>诛神记</td>
+                <td>14760</td>
+                <td>2014-9-8</td>
+            </tr>
+        </tbody>
+    </table>
+    <h2 class="title">有分割线的表格</h2>
+    <table class="m-table m-table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>项目名称</th>
+                <th>重酬金额</th>
+                <th>结束日期</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>DOTA2电竞联赛</td>
+                <td>215330</td>
+                <td>2014-10-12</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>Grow</td>
+                <td>8404</td>
+                <td>2014-11-21</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>诛神记</td>
+                <td>14760</td>
+                <td>2014-9-8</td>
+            </tr>
+        </tbody>
+    </table>
+    <h2 class="title">斑马线表格</h2>
+    <table class="m-table m-table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>项目名称</th>
+                <th>重酬金额</th>
+                <th>结束日期</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr class="m-table-odd">
+                <td>1</td>
+                <td>DOTA2电竞联赛</td>
+                <td>215330</td>
+                <td>2014-10-12</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>Grow</td>
+                <td>8404</td>
+                <td>2014-11-21</td>
+            </tr>
+
+            <tr class="m-table-odd">
+                <td>3</td>
+                <td>诛神记</td>
+                <td>14760</td>
+                <td>2014-9-8</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>DOTA2电竞联赛</td>
+                <td>215330</td>
+                <td>2014-10-12</td>
+            </tr>
+
+            <tr class="m-table-odd">
+                <td>2</td>
+                <td>Grow</td>
+                <td>8404</td>
+                <td>2014-11-21</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>诛神记</td>
+                <td>14760</td>
+                <td>2014-9-8</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>DOTA2电竞联赛</td>
+                <td>215330</td>
+                <td>2014-10-12</td>
+            </tr>
+
+            <tr class="m-table-odd">
+                <td>2</td>
+                <td>Grow</td>
+                <td>8404</td>
+                <td>2014-11-21</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>诛神记</td>
+                <td>14760</td>
+                <td>2014-9-8</td>
+            </tr>
+        </tbody>
+    </table>
+    <h2 class="title">nth child （高版本） 斑马线表格</h2>
+    <table class="m-table m-table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>项目名称</th>
+                <th>重酬金额</th>
+                <th>结束日期</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>DOTA2电竞联赛</td>
+                <td>215330</td>
+                <td>2014-10-12</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>Grow</td>
+                <td>8404</td>
+                <td>2014-11-21</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>诛神记</td>
+                <td>14760</td>
+                <td>2014-9-8</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>DOTA2电竞联赛</td>
+                <td>215330</td>
+                <td>2014-10-12</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>Grow</td>
+                <td>8404</td>
+                <td>2014-11-21</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>诛神记</td>
+                <td>14760</td>
+                <td>2014-9-8</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>DOTA2电竞联赛</td>
+                <td>215330</td>
+                <td>2014-10-12</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>Grow</td>
+                <td>8404</td>
+                <td>2014-11-21</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>诛神记</td>
+                <td>14760</td>
+                <td>2014-9-8</td>
+            </tr>
+        </tbody>
+    </table>
+    <h2 class="title">格中格</h2>
+    <table class="m-table m-table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>项目名称</th>
+                <th>重酬金额</th>
+                <th>结束日期</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>DOTA2电竞联赛</td>
+                <td>215330</td>
+                <td>
+                    <table class="m-table m-table-horizontal">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>项目名称</th>
+                                <th>重酬金额</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>DOTA2联赛</td>
+                                <td>215330</td>
+                            </tr>
+
+                            <tr>
+                                <td>2</td>
+                                <td>Grow</td>
+                                <td>8404</td>
+                            </tr>
+
+                            <tr>
+                                <td>3</td>
+                                <td>诛神记</td>
+                                <td>14760</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>Grow</td>
+                <td>8404</td>
+                <td>
+                    <table class="m-table m-table-horizontal">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>项目名称</th>
+                                <th>重酬金额</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>DOTA2联赛</td>
+                                <td>215330</td>
+                            </tr>
+
+                            <tr>
+                                <td>2</td>
+                                <td>Grow</td>
+                                <td>8404</td>
+                            </tr>
+
+                            <tr>
+                                <td>3</td>
+                                <td>诛神记</td>
+                                <td>14760</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>诛神记</td>
+                <td>14760</td>
+                <td>
+                    <table class="m-table m-table-horizontal">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>项目名称</th>
+                                <th>重酬金额</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>DOTA2联赛</td>
+                                <td>215330</td>
+                            </tr>
+
+                            <tr>
+                                <td>2</td>
+                                <td>Grow</td>
+                                <td>8404</td>
+                            </tr>
+
+                            <tr>
+                                <td>3</td>
+                                <td>诛神记</td>
+                                <td>14760</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<script type="text/javascript" src="../../dist/js/jquery.min.js"></script>
+<script type="text/javascript" src="../../dist/js/m.min.js"></script>
+</body>
+</html>

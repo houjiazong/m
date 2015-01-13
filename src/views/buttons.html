@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="UTF-8" />
+<title>Buttons Test</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="stylesheet" type="text/css" href="../../dist/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="../../dist/css/m.min.css">
+<style type="text/css">
+.title {
+	text-align: left;
+	padding: 0.5em 0;
+	color: #00c7ff;
+    font-size: 1.8em;
+}
+
+.content {
+    margin: 0 2em;
+    padding-bottom: 2em;
+}
+</style>
+</head>
+<body>
+<div class="content">
+    <h2 class="title">常规按钮</h2>
+    <div>
+        <button class="m-button">默认按钮</button>
+        <a href="#" class="m-button">A链接按钮</a>
+    </div>
+    <h2 class="title">不可用按钮</h2>
+    <div>
+        <button class="m-button m-button-disabled">不可用按钮</button>
+        <a href="#" class="m-button m-button-disabled">A不可用按钮</a>
+    </div>
+    <h2 class="title">主要的按钮</h2>
+    <div>
+        <button class="m-button m-button-primary">主要的按钮（摩点蓝）</button>
+        <a href="#" class="m-button m-button-primary">A主要的按钮（摩点蓝）</a>
+    </div>
+    <h2 class="title">表单按钮</h2>
+    <div>
+        <input type="button" value="表单button" class="m-button m-button-primary">
+        <input type="reset" value="表单reset" class="m-button m-button-primary">
+        <input type="submit" value="表单submit" class="m-button m-button-primary">
+    </div>
+    <h2 class="title">按钮尺寸</h2>
+    <div>
+        <button class="m-button m-button-primary m-button-lg">大尺寸按钮</button>
+        <button class="m-button m-button-primary">默认尺寸按钮</button>
+        <button class="m-button m-button-primary m-button-sm">小尺寸按钮</button>
+    </div>
+    <h2 class="title">按钮颜色</h2>
+    <div>
+        <button class="m-button m-button-primary">Primary</button>
+        <button class="m-button m-button-success">Success</button>
+        <button class="m-button m-button-info">Info</button>
+        <button class="m-button m-button-warning">Warning</button>
+        <button class="m-button m-button-danger">Danger</button>
+    </div>
+</div>
+<script type="text/javascript" src="../../dist/js/jquery.min.js"></script>
+<script type="text/javascript" src="../../dist/js/m.min.js"></script>
+</body>
+</html>

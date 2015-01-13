@@ -14,8 +14,8 @@ var paths = {
 	jsDist: distPath + 'js/',
 	imageSrc: srcPath + 'images/*',
  	imageDist: distPath + 'images/',
- 	fontSrc: srcPath + 'font/*',
- 	fontDist: distPath + 'font/',
+ 	fontSrc: srcPath + 'fonts/*',
+ 	fontDist: distPath + 'fonts/',
  	bowerSrc: './bower_components/'
 };
 
@@ -53,7 +53,7 @@ var customCSSReporter = function(file) {
 ////////////////////////////////////////////////////////
 
 gulp.task('js-lint', function() {
-	gulp.src(paths.jsSrc)
+	return gulp.src(paths.jsSrc)
 		.pipe(jshint())
 		.pipe(jshint.reporter('default'));
 });
@@ -63,7 +63,7 @@ gulp.task('js-lint', function() {
 /////////////////////////////////////////////////////////
 
 gulp.task('css-lint', function() {
-	gulp.src(paths.cssSrc)
+	return gulp.src(paths.cssSrc)
 		.pipe(csslint())
 		.pipe(csslint.reporter(customCSSReporter));
 });
@@ -73,8 +73,8 @@ gulp.task('css-lint', function() {
 //////////////////////////////////////////////////
 
 gulp.task('scripts', function() {
-	gulp.src(paths.jsSrc)
-		.pipe(concat('common.js'))
+	return gulp.src(paths.jsSrc)
+		.pipe(concat('m.js'))
 		.pipe(gulp.dest(paths.jsDist))
 		.pipe(rename({suffix: '.min'}))
 		.pipe(uglify())
@@ -87,11 +87,11 @@ gulp.task('scripts', function() {
 ///////////////////////////////////////////////////
 
 gulp.task('styles', function() {
-	gulp.src(paths.cssSrc)
-		.pipe(concat('main.css'))
+	return gulp.src(paths.cssSrc)
+		.pipe(concat('m.css'))
 		.pipe(gulp.dest(paths.cssDist))
 		.pipe(rename({suffix: '.min'}))
-		.pipe(minifycss({keepBreaks: true}))
+		.pipe(minifycss({keepBreaks: false}))
 		.pipe(gulp.dest(paths.cssDist))
 		.pipe(reload({stream: true}));
 });
@@ -110,15 +110,6 @@ gulp.task('images', function() {
 		.pipe(gulp.dest(paths.imageDist));
 });
 
-/////////////////////////////////////////////////////
-//                   FONTS TASK                    //
-/////////////////////////////////////////////////////
-
-gulp.task('fonts', function() {
-	gulp.src(paths.fontSrc)
-		.pipe(gulp.dest(paths.fontDist));
-});
-
 ///////////////////////////////////////////////////////
 //                   BROWSER SYNC                    //
 ///////////////////////////////////////////////////////
@@ -135,6 +126,8 @@ gulp.task('browser-sync', function() {
 			paths.jsSrc
 		]
 	});
+	gulp.watch(paths.cssSrc, ['styles']);
+	gulp.watch(paths.jsSrc, ['scripts']);
 });
 
 ///////////////////////////////////////////////////////////
@@ -142,10 +135,16 @@ gulp.task('browser-sync', function() {
 ///////////////////////////////////////////////////////////
 
 gulp.task('build-bower', function() {
-	gulp.src(paths.bowerSrc + 'zepto/zepto.js')
+
+	gulp.src(paths.bowerSrc + 'jquery/jquery.min.js')
 		.pipe(gulp.dest(paths.jsDist));
-	gulp.src(paths.bowerSrc + 'zepto/zepto.min.js')
-		.pipe(gulp.dest(paths.jsDist));
+
+	gulp.src(paths.bowerSrc + 'fontawesome/css/font-awesome.min.css')
+		.pipe(gulp.dest(paths.cssDist));
+
+	gulp.src(paths.bowerSrc + 'fontawesome/fonts/*')
+		.pipe(gulp.dest(paths.fontDist));
+
 });
 
 /////////////////////////////////////////////////////
@@ -153,7 +152,7 @@ gulp.task('build-bower', function() {
 /////////////////////////////////////////////////////
 
 gulp.task('clean', function() {
-	gulp.src(distPath, {read: false})
+	return gulp.src(distPath, {read: false})
 		.pipe(clean());
 });
 
@@ -162,8 +161,6 @@ gulp.task('clean', function() {
 ////////////////////////////////////////////////////////
 
 gulp.task('default', ['clean'], function() {
-	gulp.run('scripts', 'styles', 'build-bower', 'fonts', 'images', 'browser-sync');
-	gulp.watch(paths.cssSrc, ['styles']);
-	gulp.watch(paths.jsSrc, ['scripts']);
+	gulp.run('scripts', 'styles', 'images', 'build-bower');
 });
 

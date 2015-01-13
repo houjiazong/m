@@ -1,0 +1,114 @@
+/* button core */
+
+.m-button {
+	display: inline-block;
+	*display: inline;	/* For IE 6/7 */
+	zoom: 1;
+	line-height: normal;	/* Default line-height */
+	white-space: nowrap;
+	vertical-align: baseline;
+	text-align: center;
+	cursor: pointer;
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.m-button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+
+.m-button {
+	font-family: inherit;
+	font-size: 100%;
+	*font-size: 90%;	/* For IE 6/7 - To reduce IE's oversized button text */
+	*overflow: visible;	/* For IE 6/7 - Because of IE's overly large left/right padding on buttons */
+	padding: 0.5em 1em;
+	color: #444;	/* rgba not supported (IE 6/7/8) */
+	color: rgba(0, 0, 0, 0.8);	/* rgba supported */
+	border: 1px solid #999;	/* For IE 6/7/8 */
+	border: none rgba(0, 0, 0, 0);	/* else */
+	background-color: #e6e6e6;
+	text-decoration: none;
+	border-radius: 2px;
+}
+
+.m-button-hover,
+.m-button:hover,
+.m-button:focus {
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#1a000000', GradientType=0);
+    background-image: -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.1));
+    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.1));
+    background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.1));
+}
+
+.m-button:focus {
+	outline: 0;
+}
+
+.m-button-active,
+.m-button:active {
+	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) inset, 0 0 6px rgba(0, 0, 0, 0.20) inset;
+}
+
+.m-button[disabled],
+.m-button-disabled,
+.m-button-disabled:hover,
+.m-button-disabled:focus,
+.m-button-disabled:active {
+	border: none;
+	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+	filter: alpha(opacity=40);
+	opacity: 0.4;
+	cursor: not-allowed;
+	box-shadow: none;
+}
+
+.m-button-hidden {
+	display: none;
+}
+
+.m-button-primary,
+.m-button-selected,
+a.m-button-primary,
+a.m-button-selected {
+	background-color: rgb(0, 199, 255);
+	color: #fff;
+}
+
+.m-button-lg {
+	padding: .7em 1.2em;
+	font-size: 120%;
+}
+
+.m-button-sm {
+	padding: .4em .8em;
+	font-size: 80%;
+}
+
+.m-button-success {
+	color: #fff;
+	background-color: rgb(92, 184, 92);
+}
+
+.m-button-info {
+	color: #fff;
+	background-color: rgb(91, 192, 222);
+}
+
+.m-button-warning {
+	color: #fff;
+	background-color: rgb(240, 173, 78);
+}
+
+.m-button-danger {
+	color: #fff;
+	background-color: rgb(217, 83, 79);
+}
+
+
+
