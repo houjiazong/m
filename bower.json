@@ -1,6 +1,6 @@
 {
   "name": "m",
-  "version": "0.1",
+  "version": "1.0.0",
   "dependencies": {
       "fontawesome": "git://github.com/FortAwesome/Font-Awesome.git",
       "jquery": "git@github.com:components/jquery.git#1.11.1"
