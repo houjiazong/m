@@ -5,7 +5,7 @@ m.js基于jQuery封装了一些常用的方法
 
 ```sh
 git clone git@github.com:houjiazong/m.git
-cd mBasic
+cd m
 npm run init
 ```
 
@@ -22,5 +22,3 @@ gulp default
 gulp browser-sync
 ```
 - 更改./src/*.html即可看到效果
-
-m.css基于Pure.css更改，添加一些常用的，删除一些没用的。
