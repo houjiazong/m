@@ -19,6 +19,23 @@ var paths = {
  	bowerSrc: './bower_components/'
 };
 
+var srcPath = './src',
+		distPath = './dist';
+
+var paths = {
+	viewSrc: srcPath + 'views/*.html',
+	viewDist: distPath + 'views/',
+	cssSrc: srcPath + 'css/',
+	cssDist: distPath + 'css/',
+	jsSrc: srcPath + 'js/*.js',
+	jsDist: distPath + 'js/',
+	imageSrc: srcPath + 'images/*',
+	imageDist: distPath + 'images/',
+	fontSrc: srcPath + 'fonts/*',
+	fontDist: distPath + 'fonts/',
+	bowerSrc: './bower_components'
+};
+
 ///////////////////////////////////////////////////////
 //                   DEPENDENCIES                    //
 ///////////////////////////////////////////////////////
@@ -35,7 +52,7 @@ var gulp = require('gulp'),									// gulp core
 	uglify = require('gulp-uglify'),					// minify files width uglifyjs
 	clean = require('gulp-clean'),						// removing files and folders
 	imagemin = require('gulp-imagemin'),			// minify png, jpeg, gif and svg images
-	pngquant = require('imagemin-pngquant');	// pngquant imagemin plugin
+	pngquant = require('imagemin-pngquant');// pngquant imagemin plugin
 
 ///////////////////////////////////////////////////////////////////////////
 //                   CUSTOM ERRORS OUTPUT FOR CSSLINT                    //
