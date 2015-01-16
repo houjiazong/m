@@ -23,18 +23,18 @@ var paths = {
 //                   DEPENDENCIES                    //
 ///////////////////////////////////////////////////////
 
-var gulp = require('gulp'),						// gulp core
-	jshint = require('gulp-jshint'),			// check if js is ok
-	csslint = require('gulp-csslint'),			// check if css is ok
-	gutil = require('gulp-util'),				// utility functions for gulp
+var gulp = require('gulp'),									// gulp core
+	jshint = require('gulp-jshint'),					// check if js is ok
+	csslint = require('gulp-csslint'),				// check if css is ok
+	gutil = require('gulp-util'),							// utility functions for gulp
 	browserSync = require('browser-sync'),		// inject code to all devices
-	reload = browserSync.reload,				// reload code
-	rename = require('gulp-rename'),			// rename files
-	concat = require('gulp-concat'),			// concatenates files
+	reload = browserSync.reload,							// reload code
+	rename = require('gulp-rename'),					// rename files
+	concat = require('gulp-concat'),					// concatenates files
 	minifycss = require('gulp-minify-css'),		// minify css with clean-css
-	uglify = require('gulp-uglify'),			// minify files width uglifyjs
-	clean = require('gulp-clean'),				// removing files and folders
-	imagemin = require('gulp-imagemin'),		// minify png, jpeg, gif and svg images
+	uglify = require('gulp-uglify'),					// minify files width uglifyjs
+	clean = require('gulp-clean'),						// removing files and folders
+	imagemin = require('gulp-imagemin'),			// minify png, jpeg, gif and svg images
 	pngquant = require('imagemin-pngquant');	// pngquant imagemin plugin
 
 ///////////////////////////////////////////////////////////////////////////
@@ -163,4 +163,3 @@ gulp.task('clean', function() {
 gulp.task('default', ['clean'], function() {
 	gulp.run('scripts', 'styles', 'images', 'build-bower');
 });
-
