@@ -19,40 +19,23 @@ var paths = {
  	bowerSrc: './bower_components/'
 };
 
-var srcPath = './src',
-		distPath = './dist';
-
-var paths = {
-	viewSrc: srcPath + 'views/*.html',
-	viewDist: distPath + 'views/',
-	cssSrc: srcPath + 'css/',
-	cssDist: distPath + 'css/',
-	jsSrc: srcPath + 'js/*.js',
-	jsDist: distPath + 'js/',
-	imageSrc: srcPath + 'images/*',
-	imageDist: distPath + 'images/',
-	fontSrc: srcPath + 'fonts/*',
-	fontDist: distPath + 'fonts/',
-	bowerSrc: './bower_components'
-};
-
 ///////////////////////////////////////////////////////
 //                   DEPENDENCIES                    //
 ///////////////////////////////////////////////////////
 
-var gulp = require('gulp'),									// gulp core
-	jshint = require('gulp-jshint'),					// check if js is ok
-	csslint = require('gulp-csslint'),				// check if css is ok
-	gutil = require('gulp-util'),							// utility functions for gulp
+var gulp = require('gulp'),						// gulp core
+	jshint = require('gulp-jshint'),			// check if js is ok
+	csslint = require('gulp-csslint'),			// check if css is ok
+	gutil = require('gulp-util'),				// utility functions for gulp
 	browserSync = require('browser-sync'),		// inject code to all devices
-	reload = browserSync.reload,							// reload code
-	rename = require('gulp-rename'),					// rename files
-	concat = require('gulp-concat'),					// concatenates files
+	reload = browserSync.reload,				// reload code
+	rename = require('gulp-rename'),			// rename files
+	concat = require('gulp-concat'),			// concatenates files
 	minifycss = require('gulp-minify-css'),		// minify css with clean-css
-	uglify = require('gulp-uglify'),					// minify files width uglifyjs
-	clean = require('gulp-clean'),						// removing files and folders
-	imagemin = require('gulp-imagemin'),			// minify png, jpeg, gif and svg images
-	pngquant = require('imagemin-pngquant');// pngquant imagemin plugin
+	uglify = require('gulp-uglify'),			// minify files width uglifyjs
+	clean = require('gulp-clean'),				// removing files and folders
+	imagemin = require('gulp-imagemin'),		// minify png, jpeg, gif and svg images
+	pngquant = require('imagemin-pngquant');	// pngquant imagemin plugin
 
 ///////////////////////////////////////////////////////////////////////////
 //                   CUSTOM ERRORS OUTPUT FOR CSSLINT                    //
