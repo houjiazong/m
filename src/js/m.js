@@ -1,12 +1,12 @@
 /**
  * m
  * jQuery Library v0.1
- * 
+ *
  * 基于jQuery的基础库，封装一些常用的方法
  *
  * @Author houjiazong <houjiazong@gmail.com> M丶
  * @Date 2014-11-17
- * 
+ *
  * https://github.com/houjiazong/m.git
  */
 
@@ -157,7 +157,7 @@
 		function update() {
 			$elements.each(function() {
 				var $this = $(this);
-				
+
 				if (!$this.is(':visible')) return;
 				if (abovethetop($this) || leftofbegin($this)) {
 					// 什么都不做
