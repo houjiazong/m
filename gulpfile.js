@@ -112,7 +112,7 @@ gulp.task('build-bower', function() {
 		.pipe(gulp.dest(jsVendorPath));
 
 	gulp.src(bowerPath + 'fontawesome/css/font-awesome.min.css')
-		.pipe(gulp.dest(cssVendorPath));
+		.pipe(gulp.dest(cssDistPath));
 
 	gulp.src(bowerPath + 'fontawesome/fonts/*')
 		.pipe(gulp.dest(fontPath));
