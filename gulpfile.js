@@ -1,45 +1,49 @@
-////////////////////////////////////////////////////////////
-//                   SRC && DIST PATHS                    //
-////////////////////////////////////////////////////////////
+// paths
 
-var srcPath = './src/',
-	distPath = './dist/';
+var distPath = './dist/';
 
-var paths = {
-	viewSrc: srcPath + 'views/*.html',
-	viewDist: distPath + 'views/',
-	cssSrc: srcPath + 'css/*.css',
-	cssDist: distPath + 'css/',
-	jsSrc: srcPath + 'js/*.js',
-	jsDist: distPath + 'js/',
-	imageSrc: srcPath + 'images/*',
- 	imageDist: distPath + 'images/',
- 	fontSrc: srcPath + 'fonts/*',
- 	fontDist: distPath + 'fonts/',
- 	bowerSrc: './bower_components/'
+var cssPath = './css/',
+	jsPath = './js/';
+
+var cssDistPath = distPath + 'css/',
+	jsDistPath = distPath + 'js/';
+
+var jsVendorPath = jsDistPath + 'vendor/',
+	cssVendorPath = cssDistPath + 'vendor/';
+
+var bowerPath = './bower_components/';
+
+var fontPath = distPath + 'fonts/';
+
+var files = {
+	js_files: [
+		jsPath + 'm.js'
+	],
+	css_files: [
+		cssPath + 'base.css',
+		cssPath + 'buttons.css',
+		cssPath + 'forms.css',
+		cssPath + 'grids.css',
+		cssPath + 'tables.css'
+	]
 };
 
-///////////////////////////////////////////////////////
-//                   DEPENDENCIES                    //
-///////////////////////////////////////////////////////
+// dependencies
 
-var gulp = require('gulp'),						// gulp core
-	jshint = require('gulp-jshint'),			// check if js is ok
-	csslint = require('gulp-csslint'),			// check if css is ok
-	gutil = require('gulp-util'),				// utility functions for gulp
-	browserSync = require('browser-sync'),		// inject code to all devices
-	reload = browserSync.reload,				// reload code
-	rename = require('gulp-rename'),			// rename files
-	concat = require('gulp-concat'),			// concatenates files
-	minifycss = require('gulp-minify-css'),		// minify css with clean-css
-	uglify = require('gulp-uglify'),			// minify files width uglifyjs
-	clean = require('gulp-clean'),				// removing files and folders
-	imagemin = require('gulp-imagemin'),		// minify png, jpeg, gif and svg images
-	pngquant = require('imagemin-pngquant');	// pngquant imagemin plugin
+var gulp = require('gulp'),
+	jshint = require('gulp-jshint'),
+	csslint = require('gulp-csslint'),
+	gutil = require('gulp-util'),
+	browserSync = require('browser-sync'),
+	reload = browserSync.reload,
+	rename = require('gulp-rename'),
+	concat = require('gulp-concat'),
+	minifycss = require('gulp-minify-css'),
+	uglify = require('gulp-uglify'),
+	clean = require('gulp-clean'),
+	autoprefixer = require('gulp-autoprefixer');
 
-///////////////////////////////////////////////////////////////////////////
-//                   CUSTOM ERRORS OUTPUT FOR CSSLINT                    //
-///////////////////////////////////////////////////////////////////////////
+// custom errors output for csslint
 
 var customCSSReporter = function(file) {
 	gutil.log(gutil.colors.red(file.csslint.errorCount) + ' errors in ' + gutil.colors.yellow(file.path));
@@ -48,71 +52,74 @@ var customCSSReporter = function(file) {
 	});
 };
 
-////////////////////////////////////////////////////////
-//                   CHECK JS TASK                    //
-////////////////////////////////////////////////////////
+// check js task
 
 gulp.task('js-lint', function() {
-	return gulp.src(paths.jsSrc)
+	return gulp.src(files.js_files)
 		.pipe(jshint())
 		.pipe(jshint.reporter('default'));
 });
 
-/////////////////////////////////////////////////////////
-//                   CHECK CSS TASK                    //
-/////////////////////////////////////////////////////////
+// check css task
 
 gulp.task('css-lint', function() {
-	return gulp.src(paths.cssSrc)
+	return gulp.src(files.css_files)
 		.pipe(csslint())
 		.pipe(csslint.reporter(customCSSReporter));
 });
 
-//////////////////////////////////////////////////
-//                   JS TASK                    //
-//////////////////////////////////////////////////
+// js task
 
 gulp.task('scripts', function() {
-	return gulp.src(paths.jsSrc)
+	return gulp.src(files.js_files)
 		.pipe(concat('m.js'))
-		.pipe(gulp.dest(paths.jsDist))
+		.pipe(gulp.dest(jsDistPath))
 		.pipe(rename({suffix: '.min'}))
 		.pipe(uglify())
-		.pipe(gulp.dest(paths.jsDist))
+		.pipe(gulp.dest(jsDistPath))
 		.pipe(reload({stream: true}));
 });
 
-///////////////////////////////////////////////////
-//                   CSS TASK                    //
-///////////////////////////////////////////////////
+// css task
 
 gulp.task('styles', function() {
-	return gulp.src(paths.cssSrc)
+	return gulp.src(files.css_files)
+		.pipe(autoprefixer({
+			browsers: [
+				'last 2 versions',
+				'> 1%',
+				'IE 9',
+				'IE 8'
+			],
+			cascade: false
+		}))
 		.pipe(concat('m.css'))
-		.pipe(gulp.dest(paths.cssDist))
+		.pipe(gulp.dest(cssDistPath))
 		.pipe(rename({suffix: '.min'}))
 		.pipe(minifycss({keepBreaks: false}))
-		.pipe(gulp.dest(paths.cssDist))
+		.pipe(gulp.dest(cssDistPath))
 		.pipe(reload({stream: true}));
 });
 
-/////////////////////////////////////////////////////////////
-//                   MINIFY IMAGES TASK                    //
-/////////////////////////////////////////////////////////////
+// build bower
 
-gulp.task('images', function() {
-	return gulp.src(paths.imageSrc)
-		.pipe(imagemin({
-			progressive: true,
-			svgoPlugins: [{removeViewBox: false}],
-			use: [pngquant()]
-		}))
-		.pipe(gulp.dest(paths.imageDist));
+gulp.task('build-bower', function() {
+
+	gulp.src(bowerPath + 'jquery/jquery.min.js')
+		.pipe(gulp.dest(jsVendorPath));
+
+	gulp.src(bowerPath + 'jquery/jquery.min.map')
+		.pipe(gulp.dest(jsVendorPath));
+
+	gulp.src(bowerPath + 'fontawesome/css/font-awesome.min.css')
+		.pipe(gulp.dest(cssVendorPath));
+
+	gulp.src(bowerPath + 'fontawesome/fonts/*')
+		.pipe(gulp.dest(fontPath));
+
 });
 
-///////////////////////////////////////////////////////
-//                   BROWSER SYNC                    //
-///////////////////////////////////////////////////////
+// browser sync
 
 gulp.task('browser-sync', function() {
 	browserSync({
@@ -121,45 +128,22 @@ gulp.task('browser-sync', function() {
 			directory: true
 		},
 		files: [
-			paths.cssSrc,
-			paths.viewSrc,
-			paths.jsSrc
+			'./test/*.html'
 		]
 	});
-	gulp.watch(paths.cssSrc, ['styles']);
-	gulp.watch(paths.jsSrc, ['scripts']);
 });
 
-///////////////////////////////////////////////////////////
-//                   BUILD BOWER TASK                    //
-///////////////////////////////////////////////////////////
-
-gulp.task('build-bower', function() {
-
-	gulp.src(paths.bowerSrc + 'jquery/jquery.min.js')
-		.pipe(gulp.dest(paths.jsDist));
-
-	gulp.src(paths.bowerSrc + 'fontawesome/css/font-awesome.min.css')
-		.pipe(gulp.dest(paths.cssDist));
-
-	gulp.src(paths.bowerSrc + 'fontawesome/fonts/*')
-		.pipe(gulp.dest(paths.fontDist));
-
-});
-
-/////////////////////////////////////////////////////
-//                   CLEAN TASK                    //
-/////////////////////////////////////////////////////
+// clean task
 
 gulp.task('clean', function() {
 	return gulp.src(distPath, {read: false})
 		.pipe(clean());
 });
 
-////////////////////////////////////////////////////////
-//                    DEFAULT TASK                    //
-////////////////////////////////////////////////////////
+// default task
 
 gulp.task('default', ['clean'], function() {
-	gulp.run('scripts', 'styles', 'images', 'build-bower');
+	gulp.run('scripts', 'styles', 'build-bower', 'browser-sync');
+	gulp.watch(files.js_files, ['scripts']);
+	gulp.watch(files.css_files, ['styles']);
 });

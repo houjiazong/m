@@ -2,8 +2,7 @@
   "name": "m",
   "version": "1.0.0",
   "devDependencies": {
-      "fontawesome": "git://github.com/FortAwesome/Font-Awesome.git",
-      "jquery": "git@github.com:components/jquery.git#1.11.1"
-  },
-  "devDependencies": {}
+      "fontawesome": "https://github.com/FortAwesome/Font-Awesome.git#v4.2.0",
+      "jquery": "https://github.com/components/jquery.git#1.11.2"
+  }
 }

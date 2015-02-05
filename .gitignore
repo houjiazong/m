@@ -4,6 +4,6 @@ bower_components
 npm-debug.log
 .DS_Store
 
-dist/css/font-awesome.min.css
+dist/css/vendor
 dist/fonts
-dist/js/jquery.min.js
+dist/js/vendor
